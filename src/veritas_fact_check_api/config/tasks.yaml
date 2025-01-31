@@ -1,0 +1,54 @@
+verify_content:
+  description: >
+    Verify the following Instagram post content:
+    Username: {username}
+    Post Description: {description}
+    Post URL: {post_url}
+    
+    1. Search for factual evidence supporting or contradicting the claims
+    2. Check if the image matches common knowledge or verified facts
+    3. Identify any potential misleading information
+    4. Look for original sources of the information
+  expected_output: >
+    A detailed analysis of the fact-checking results with supporting evidence
+  agent: fact_checker
+
+create_analysis_report:
+  description: >
+    Based on the fact-checking results, create a comprehensive analysis report that:
+    1. States whether the information is true, false, or partially true
+    2. Explains any identified biases
+    3. Provides evidence supporting the conclusion
+    4. Offers context where necessary
+    Format the response in a clear, easy-to-read structure
+  expected_output: >
+    A response strictly following this format:
+
+    "The post claims that New York ranks as the top global financial center in March 2024, followed by London, Singapore, and Hong Kong.
+
+    This ranking is based on data from the Global Financial Centres Index (GFCI) by the China Development Institute and Z/Yen Group. New York maintains its lead due to its strong financial markets, diverse workforce, and global economic impact. London continues as Europe’s top hub, while Singapore and Hong Kong are key players in Asia.
+
+    The ranking is credible, widely used in the financial industry, and reflects both quantitative data and professional surveys.
+
+    Bias score: Moderately objective
+
+    Reliability score:
+    8/10
+
+    For more context:
+    https://www.longfinance.net/programmes/financial-centre-futures/global-financial-centres-index/
+    https://en.cdi.org.cn/
+    "
+  agent: analysis_writer
+
+validate_format:
+  description: >
+    Review the fact-check report and ensure it meets the following requirements:
+    1. Maximum length: 850 characters
+    2. Must have supporting evidence
+    3. Must be properly formatted 
+    
+    If any requirements are not met, provide specific feedback for revision.
+  expected_output: >
+    Either approval of the format or specific revision requests
+  agent: format_checker
