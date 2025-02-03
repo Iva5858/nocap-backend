@@ -20,25 +20,26 @@ create_analysis_report:
     2. Explains any identified biases
     3. Provides evidence supporting the conclusion
     4. Offers context where necessary
+    5. Includes relevant source links for verification
     Format the response in a clear, easy-to-read structure
   expected_output: >
     A response strictly following this format:
 
-    "The post claims that New York ranks as the top global financial center in March 2024, followed by London, Singapore, and Hong Kong.
+    "[Main claim from the post]
 
-    This ranking is based on data from the Global Financial Centres Index (GFCI) by the China Development Institute and Z/Yen Group. New York maintains its lead due to its strong financial markets, diverse workforce, and global economic impact. London continues as Europe’s top hub, while Singapore and Hong Kong are key players in Asia.
+    [Detailed explanation of the fact-check findings with specific evidence]
 
-    The ranking is credible, widely used in the financial industry, and reflects both quantitative data and professional surveys.
+    [Conclusion about the claim's accuracy]
 
-    Bias score: Moderately objective
+    Bias score: [Low/Moderate/High] [objective/biased]
 
     Reliability score:
-    8/10
+    [X]/10
 
     For more context:
-    https://www.longfinance.net/programmes/financial-centre-futures/global-financial-centres-index/
-    https://en.cdi.org.cn/
-    "
+    [Link 1 with description]
+    [Link 2 with description]
+    [Additional links as needed]"
   agent: analysis_writer
 
 validate_format:
